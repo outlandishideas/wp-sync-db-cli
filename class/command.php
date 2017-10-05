@@ -129,7 +129,7 @@ class WPSDBCLI extends WP_CLI_Command {
 		$result = wpsdb_cli_connection_info();
 
 		if ( $result ) {
-			WP_CLI::log( $result );
+			print( $result );
 			return;
 		}
 
