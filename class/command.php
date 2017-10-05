@@ -115,6 +115,28 @@ class WPSDBCLI extends WP_CLI_Command {
 		return;
 	}
 
+	/**
+	 * Echo out the DB token. For use in automation.
+	 *
+	 * ## EXAMPLES
+	 *
+	 * 	wp wpsdb connection-info
+	 *
+	 * @since 1.0
+	 * @subcommand connection-info
+	 */
+	public function connection_info( $args, $assoc_args ) {
+		$result = wpsdb_cli_connection_info();
+
+		if ( $result ) {
+			WP_CLI::log( $result );
+			return;
+		}
+
+		WP_CLI::warning( $result->get_error_message() );
+		return;
+	}
+
 }
 
 WP_CLI::add_command( 'wpsdb', 'WPSDBCLI' );

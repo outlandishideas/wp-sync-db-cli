@@ -47,6 +47,16 @@ class WPSDB_CLI extends WPSDB_Addon {
 		return $result;
 	}
 
+	function cli_connection_info( ) {
+		$wpsdb_settings = get_option( 'wpsdb_settings' );
+
+		if ( $wpsdb_settings['key'] ) {
+			return $wpsdb_settings['key'];
+		} else {
+			return $this->cli_error( __( 'Key could not be found in Migrate DB - this is not expected.', 'wp-sync-db-cli' ) );
+		}
+	}
+
 	function cli_create_profile( $name, $assoc_args ) {
 		$wpsdb_settings = get_option( 'wpsdb_settings' );
 
