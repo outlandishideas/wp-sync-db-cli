@@ -6,6 +6,6 @@
   "description": "WP Sync DB CLI Addon",
   "keywords": ["plugin","wordpress","wp-sync-db","cli"],
   "require": {
-    "composer/installers": "~1.0.6"
+    "composer/installers": "~1.0"
   }
 }
